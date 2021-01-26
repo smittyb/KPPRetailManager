@@ -1,0 +1,7 @@
+KPP Retail Manager auth token:
+"access_token": "T8xfpAvwr9t-7enWVCODoqPgJ-nrxcXdpLYCoCs4WLlQhzgTA4oVOnxqMK59tniXkRmvRBVVau1-Y8ZDq-Ir8x9E75AocZ_CGE9jHX7mq_X90gWiaVg1PmzZu3l6_qFcKvtv6JO43DkgixR6rpKmSMbid8RaD4-hlGcZ9IelkGvwqJSNPuyK5OisH0dv_EM8Mc70vQjoWPY2HZCSBsFFVgiItD0uDPUieqk0xQhqLg4iPsofvK-cZPex73g5DnMmcUkzPkg19g7s9rjNdKHcIuIRU30rhsAJtTp5D95Zjh_lQiQuxtKCiCTs7MIs8jejZpgoDrkySbqjBVrqc2ugKVNHC5MV1DCuutIg9sWXBORMhNmdPm4cJx8kS-G0Jk05FfSCyporors-rtVkMmkUHJrOwdHob8Fuk_ipBI07kRDS_2-ZHeCM6B4Xx7lhbl6JkRafl5jBaApJmeBLoncDr6yKiNIBGqUDOYIK7v4TXUW8C_aS5Nf7nw2p5ds0Haux",
+    "token_type": "bearer",
+    "expires_in": 1209599,
+    "userName": "jim@kidspetspeople.com",
+    ".issued": "Tue, 26 Jan 2021 22:06:18 GMT",
+    ".expires": "Tue, 09 Feb 2021 22:06:18 GMT"
