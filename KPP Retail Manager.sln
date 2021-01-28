@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.30914.41
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPPDataManager", "KPPDataManager\KPPDataManager.csproj", "{7B69B408-4229-444B-849E-28FA2A09C18D}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "KPPData", "KPPData\KPPData.sqlproj", "{F553140B-1CAD-4CAA-8F77-5929C38AB051}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPPDesktopUI", "KPPDesktopUI\KPPDesktopUI.csproj", "{9D578E5C-4A2A-4112-9A21-652D2E89E495}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{7B69B408-4229-444B-849E-28FA2A09C18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B69B408-4229-444B-849E-28FA2A09C18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B69B408-4229-444B-849E-28FA2A09C18D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F553140B-1CAD-4CAA-8F77-5929C38AB051}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F553140B-1CAD-4CAA-8F77-5929C38AB051}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F553140B-1CAD-4CAA-8F77-5929C38AB051}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F553140B-1CAD-4CAA-8F77-5929C38AB051}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F553140B-1CAD-4CAA-8F77-5929C38AB051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F553140B-1CAD-4CAA-8F77-5929C38AB051}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9D578E5C-4A2A-4112-9A21-652D2E89E495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D578E5C-4A2A-4112-9A21-652D2E89E495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D578E5C-4A2A-4112-9A21-652D2E89E495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D578E5C-4A2A-4112-9A21-652D2E89E495}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
