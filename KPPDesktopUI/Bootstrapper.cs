@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using KPPDesktopUI.Helpers;
+using KPPDesktopUI.Library.Api;
+using KPPDesktopUI.Library.Models;
 using KPPDesktopUI.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -32,6 +34,7 @@ namespace KPPDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>()
                 .Singleton<IAPIHelper, APIHelper>();
 
 

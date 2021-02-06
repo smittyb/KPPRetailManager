@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPPDesktopUI", "KPPDesktopU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPPDataManager.Library", "KPPDataManager.Library\KPPDataManager.Library.csproj", "{D275A7FF-1E5B-4F7D-9F6E-016A092FEFC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPPDesktopUI.Library", "KPPDesktopUI.Library\KPPDesktopUI.Library.csproj", "{163BE676-868C-49D8-AC0B-B7E64296AA4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{D275A7FF-1E5B-4F7D-9F6E-016A092FEFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D275A7FF-1E5B-4F7D-9F6E-016A092FEFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D275A7FF-1E5B-4F7D-9F6E-016A092FEFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{163BE676-868C-49D8-AC0B-B7E64296AA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{163BE676-868C-49D8-AC0B-B7E64296AA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{163BE676-868C-49D8-AC0B-B7E64296AA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{163BE676-868C-49D8-AC0B-B7E64296AA4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

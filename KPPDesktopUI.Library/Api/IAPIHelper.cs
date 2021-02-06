@@ -1,10 +1,12 @@
 ﻿using System.Threading.Tasks;
-using KPPDesktopUI.Models;
+using KPPDesktopUI.Library.Models;
 
-namespace KPPDesktopUI.Helpers
+
+namespace KPPDesktopUI.Library.Api
 {
     public interface IAPIHelper
     {
         Task<AuthenticatedUser> Authenticate(string username, string password);
+        Task GetLoggedInUserInfo(string token);
     }
 }
