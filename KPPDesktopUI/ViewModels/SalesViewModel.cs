@@ -189,6 +189,7 @@ namespace KPPDesktopUI.ViewModels
             NotifyOfPropertyChange(() => SubTotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
+            NotifyOfPropertyChange(() => CanCheckOut);
         }
 
         public bool CanRemoveFromCart
@@ -208,6 +209,7 @@ namespace KPPDesktopUI.ViewModels
             NotifyOfPropertyChange(() => SubTotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
+            NotifyOfPropertyChange(() => CanCheckOut);
         }
 
         public bool CanCheckOut
@@ -217,6 +219,10 @@ namespace KPPDesktopUI.ViewModels
                 bool output = false;
 
                 // Make sure something in cart
+                if (Cart.Count > 0)
+                {
+                    output = true;
+                }
 
                 return output;
             }
@@ -224,7 +230,7 @@ namespace KPPDesktopUI.ViewModels
 
         public void CheckOut()
         {
-
+            // Create a SaleModel and post to the API
         }
 
     }

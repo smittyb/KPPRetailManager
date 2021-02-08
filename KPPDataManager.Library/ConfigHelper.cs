@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KPPDesktopUI.Library.Helpers
+namespace KPPDesktopUI.Library
 {
-    public class ConfigHelper : IConfigHelper
+    public class ConfigHelper 
     {
-        // TODO Move this from config to the API
+        // TODO: Move this from config to the API
         public decimal GetTaxRate()
         {
             string rateText = ConfigurationManager.AppSettings["taxRate"];
@@ -24,4 +24,5 @@ namespace KPPDesktopUI.Library.Helpers
             return output;
         }
     }
+    
 }
