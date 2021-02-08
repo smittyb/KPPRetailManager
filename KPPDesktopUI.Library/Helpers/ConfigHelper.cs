@@ -11,10 +11,9 @@ namespace KPPDesktopUI.Library.Helpers
     {
         public decimal GetTaxRate()
         {
-
             string rateText = ConfigurationManager.AppSettings["taxRate"];
 
-            bool IsValidTaxRate = decimal.TryParse(rateText, out decimal output);
+            bool IsValidTaxRate = Decimal.TryParse(rateText, out decimal output);
 
             if (IsValidTaxRate == false)
             {
