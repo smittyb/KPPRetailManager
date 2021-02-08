@@ -113,13 +113,18 @@ namespace KPPDesktopUI.ViewModels
 
             decimal taxRate = _configHelper.GetTaxRate()/100;
 
-            foreach (var item in Cart)
-            {
-                if (item.Product.IsTaxable)
-                {
-                    taxAmount += (item.Product.RetailPrice * item.QuantityInCart * taxRate);
-                }
-            }
+            taxAmount = Cart
+                .Where(x => x.Product.IsTaxable)
+                .Sum(x => x.Product.RetailPrice * x.QuantityInCart * taxRate);
+
+            //// Refactored below to above to make what's happening slightly clearer and eliminate parens
+            //foreach (var item in Cart)
+            //{
+            //    if (item.Product.IsTaxable)
+            //    {
+            //        taxAmount += (item.Product.RetailPrice * item.QuantityInCart * taxRate);
+            //    }
+            //}
             return taxAmount;
         }
 
