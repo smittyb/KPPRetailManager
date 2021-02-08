@@ -1,1 +1,24 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="21364809-7d9d-46dd-a0b4-77e99701350f" ChangeDateTime="02/08/2021 06:00:16">
+    <Property Name="ElementName" Value="[dbo].[FK_Inventory_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Inventory]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Inventory_ToProduct]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="da5f124d-ad50-4d9b-8c77-473aeb95e71d" ChangeDateTime="02/08/2021 06:06:04">
+    <Property Name="ElementName" Value="[dbo].[FK_Sale_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Sale]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Sale_ToUser]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="27d72798-2b03-48f4-accc-82f17fb69764" ChangeDateTime="02/08/2021 06:13:28">
+    <Property Name="ElementName" Value="[dbo].[FK_SaleDetail_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[SaleDetail]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_SaleDetail_ToSale]" />
+  </Operation>
+</Operations>
