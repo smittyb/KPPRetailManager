@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace KPPDataManager.Library.Internal.DataAccess
 {
-    public class SqlDataAccess
+    internal class SqlDataAccess
     {
-        internal string GetConnectionString(string name)
+        public string GetConnectionString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
@@ -30,7 +30,7 @@ namespace KPPDataManager.Library.Internal.DataAccess
             }
         }
 
-        public void SaveData<T, U>(string storedProcedure, T parameters, string connectionStringName)
+        public void SaveData<T>(string storedProcedure, T parameters, string connectionStringName)
         {
             string connectionString = GetConnectionString(connectionStringName);
 
