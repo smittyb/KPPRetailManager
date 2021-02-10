@@ -17,8 +17,8 @@ namespace KPPDesktopUI.ViewModels
         private IEventAggregator _events;
         private SalesViewModel _salesVM;
         private ILoggedInUserModel _user;
-        //// TODO -- added per start of lesson 23
-        //private IAPIHelper _apiHelper;
+        // TODO -- added per start of lesson 23
+        private IAPIHelper _apiHelper;
 
         // TODO -- added per start of lesson 23 below was before
         //public ShellViewModel(IEventAggregator events, SalesViewModel salesVM, ILoggedInUserModel user)
@@ -27,8 +27,7 @@ namespace KPPDesktopUI.ViewModels
             _events = events;
             _salesVM = salesVM;
             _user = user;
-            // TODO -- added per start of lesson 23
-            _apiHelper = APIHelper;
+            _apiHelper = apiHelper;
 
             _events.Subscribe(this);
 

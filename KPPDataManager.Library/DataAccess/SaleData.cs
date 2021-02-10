@@ -57,21 +57,39 @@ namespace KPPDataManager.Library.DataAccess
 
             sale.Total = sale.SubTotal + sale.Tax;
 
-            // Save the sale model
-            SqlDataAccess sql = new SqlDataAccess();
-            sql.SaveData("dbo.spSale_Insert", sale, "KPPData");
-
-            // Get the ID from the sale mode
-            sale.Id = sql.LoadData<int, dynamic>("spSale_Lookup", new { sale.CashierId, sale.SaleDate }, "KPPData").FirstOrDefault();
-
-            // Get the ID from the sale model
-            // Finish filling in the sale detail model
-            foreach (var item in details)
+            using (SqlDataAccess sql = new SqlDataAccess())
             {
-                item.SaleId = sale.Id;
-                // Save the sale detail model
-                sql.SaveData("dbo.spSaleDetail_Insert", item, "KPPData");
+                try
+                {
+                    sql.StartTransaction("KPPData");
+
+                    // Save the sale model
+                    sql.SaveDataInTransaction("dbo.spSale_Insert", sale);
+
+                    // Get the ID from the sale mode
+                    sale.Id = sql.LoadDataInTransaction<int, dynamic>("spSale_Lookup", new { sale.CashierId, sale.SaleDate }).FirstOrDefault();
+
+                    // Finish filling in the sale detail model
+                    foreach (var item in details)
+                    {
+                        item.SaleId = sale.Id;
+                        // Save the sale detail model
+                        sql.SaveDataInTransaction("dbo.spSaleDetail_Insert", item);
+                    }
+
+                    sql.CommitTransaction();
+                }
+                catch
+                {
+
+                    sql.RollbackTransaction();
+                    throw;
+                }
             }
+
+           
+
+            
         }
     }
 }
