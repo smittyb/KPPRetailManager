@@ -25,9 +25,8 @@ namespace KPPDesktopUI.ViewModels
             ISaleEndpoint saleEndpoint, IMapper mapper)
         {
             _productEndpoint = productEndpoint;
-            _saleEndpoint = saleEndpoint;
             _configHelper = configHelper;
-            _mapper = mapper;
+            _saleEndpoint = saleEndpoint;
         }
 
         protected override async void OnViewLoaded(object view)
@@ -65,19 +64,6 @@ namespace KPPDesktopUI.ViewModels
                 _selectedProduct = value;
                 NotifyOfPropertyChange(() => SelectedProduct);
                 NotifyOfPropertyChange(() => CanAddToCart);
-            }
-        }
-
-        private CartItemDisplayModel _selectedCartItem;
-
-        public CartItemDisplayModel SelectedCartItem
-        {
-            get { return _selectedCartItem; }
-            set
-            {
-                _selectedCartItem = value;
-                NotifyOfPropertyChange(() => SelectedCartItem);
-                NotifyOfPropertyChange(() => CanRemoveFromCart);
             }
         }
 
@@ -191,6 +177,9 @@ namespace KPPDesktopUI.ViewModels
             if (existingItem != null)
             {
                 existingItem.QuantityInCart += ItemQuantity;
+                // HACK -- There should be a better way of refreshing the display
+                Cart.Remove(existingItem);
+                Cart.Add(existingItem);
             }
             else
             {
@@ -217,10 +206,6 @@ namespace KPPDesktopUI.ViewModels
                 bool output = false;
 
                 // Make sure something is selected
-                if (SelectedCartItem != null && SelectedCartItem?.Product.QuantityInStock > 0)
-                {
-                    output = true;
-                }
 
                 return output;
             }
@@ -228,17 +213,6 @@ namespace KPPDesktopUI.ViewModels
 
         public void RemoveFromCart()
         {
-            SelectedCartItem.Product.QuantityInStock += 1;
-            
-            if (SelectedCartItem.QuantityInCart > 1)
-            {
-                SelectedCartItem.QuantityInCart -= 1;
-            }
-            else
-            {
-                Cart.Remove(SelectedCartItem);
-            }
-
             NotifyOfPropertyChange(() => SubTotal);
             NotifyOfPropertyChange(() => Tax);
             NotifyOfPropertyChange(() => Total);
