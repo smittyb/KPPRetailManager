@@ -25,9 +25,8 @@ namespace KPPDesktopUI.ViewModels
             ISaleEndpoint saleEndpoint, IMapper mapper)
         {
             _productEndpoint = productEndpoint;
-            _saleEndpoint = saleEndpoint;
             _configHelper = configHelper;
-            _mapper = mapper;
+            _saleEndpoint = saleEndpoint;
         }
 
         protected override async void OnViewLoaded(object view)
@@ -178,6 +177,9 @@ namespace KPPDesktopUI.ViewModels
             if (existingItem != null)
             {
                 existingItem.QuantityInCart += ItemQuantity;
+                // HACK -- There should be a better way of refreshing the display
+                Cart.Remove(existingItem);
+                Cart.Add(existingItem);
             }
             else
             {
