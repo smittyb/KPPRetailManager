@@ -93,8 +93,18 @@ namespace KPPDataManager.Library.Internal.DataAccess
         {
             if (isClosed == false)
             {
-                CommitTransaction(); 
+                try
+                {
+                    CommitTransaction();
+                }
+                catch (Exception)
+                {
+                    // TODO - Log this issue
+                }
             }
+
+            _transaction = null;
+            _connection = null;
         }
 
         // Open connection/start transaction method
