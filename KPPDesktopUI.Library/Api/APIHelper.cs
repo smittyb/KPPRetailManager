@@ -64,6 +64,12 @@ namespace KPPDesktopUI.Library.Api
             }
         }
 
+        // TOTO -- Added per start of #23
+        public void LogOffUser()
+        {
+            _apiClient.DefaultRequestHeaders.Clear();
+        }
+
         public async Task GetLoggedInUserInfo(string token)
         {
             _apiClient.DefaultRequestHeaders.Clear();

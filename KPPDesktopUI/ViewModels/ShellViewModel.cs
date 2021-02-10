@@ -1,5 +1,6 @@
 ﻿using Caliburn.Micro;
 using KPPDesktopUI.EventModels;
+using KPPDesktopUI.Library.Api;
 using KPPDesktopUI.Library.Models;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,24 @@ namespace KPPDesktopUI.ViewModels
 {
     public class ShellViewModel : Conductor<object>, IHandle<LogOnEvent>
     {
-        private LoginViewModel _loginVM;
+        //// TODO - removed per start of lesson 23
+        //private LoginViewModel _loginVM;
         private IEventAggregator _events;
         private SalesViewModel _salesVM;
         private ILoggedInUserModel _user;
+        //// TODO -- added per start of lesson 23
+        //private IAPIHelper _apiHelper;
 
-        public ShellViewModel(IEventAggregator events, SalesViewModel salesVM, ILoggedInUserModel user)
+        // TODO -- added per start of lesson 23 below was before
+        //public ShellViewModel(IEventAggregator events, SalesViewModel salesVM, ILoggedInUserModel user)
+        public ShellViewModel(IEventAggregator events, SalesViewModel salesVM, ILoggedInUserModel user, IAPIHelper apiHelper)
         {
             _events = events;
             _salesVM = salesVM;
             _user = user;
-            
+            // TODO -- added per start of lesson 23
+            _apiHelper = APIHelper;
+
             _events.Subscribe(this);
 
             ActivateItem(IoC.Get<LoginViewModel>());
@@ -47,7 +55,9 @@ namespace KPPDesktopUI.ViewModels
 
         public void LogOut()
         {
-            _user.LogOffUser();
+            _user.ResetUserModel();
+            // TODO -- added per start of lesson 23
+            _apiHelper.LogOffUser();
             ActivateItem(IoC.Get<LoginViewModel>());
             NotifyOfPropertyChange(() => IsLoggedIn);
         }
