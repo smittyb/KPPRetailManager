@@ -15,8 +15,6 @@ namespace KPPDataManager.Library.DataAccess
     {
         public void SaveSale(SaleModel saleInfo, string cashierId)
         {
-            // TODO; Make this SOLID/DRY/Better
-            // Start filling in the sale detail models we will save to the database
             List<SaleDetailDBModel> details = new List<SaleDetailDBModel>();
             ProductData products = new ProductData();
             var taxRate = ConfigHelper.GetTaxRate()/100;
@@ -86,10 +84,15 @@ namespace KPPDataManager.Library.DataAccess
                     throw;
                 }
             }
+        }
 
-           
+        public List<SaleReportModel> GetSalesReport()
+        {
+            SqlDataAccess sql = new SqlDataAccess();
 
-            
+            var output = sql.LoadData<SaleReportModel, dynamic>("dbo.spSale_SaleReport", new { }, "KPPData");
+
+            return output;
         }
     }
 }
