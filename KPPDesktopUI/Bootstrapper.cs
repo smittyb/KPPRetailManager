@@ -50,6 +50,7 @@ namespace KPPDesktopUI
 
             _container.Instance(_container)
                 .PerRequest<IProductEndpoint, ProductEndpoint>()
+                .PerRequest<IUserEndpoint, UserEndpoint>()
                 .PerRequest<ISaleEndpoint, SaleEndpoint>();
 
             _container
