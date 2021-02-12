@@ -25,9 +25,9 @@ namespace KPPDataManager.Controllers
             return data.GetUserById(userId).First();
         }
 
-        [Authorize(Roles = "Admin"]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
-        [Route("Admin/GetAllUsers")]
+        [Route("api/User/Admin/GetAllUsers")]
         public List<ApplicationUserModel> GetAllUsers()
         {
             List<ApplicationUserModel> output = new List<ApplicationUserModel>();

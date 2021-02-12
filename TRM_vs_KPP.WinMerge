@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<paths>
+		<left>D:\Jims_Stuff\Corey\TimcoRetailManager\TimCoSource\Lesson029-ManagingUserRoles\TRMDesktopUI\Views\UserDisplayView.xaml</left>
+		<right>D:\Jims_Stuff\Corey\KPP Retail Manager\KPPDesktopUI\Views\UserDisplayView.xaml</right>
+		<filter>*.*</filter>
+		<subfolders>1</subfolders>
+		<left-readonly>0</left-readonly>
+		<right-readonly>0</right-readonly>
+	</paths>
+</project>
