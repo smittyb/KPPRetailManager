@@ -76,7 +76,7 @@ namespace KPPDataManager.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        [Route("api/User/Admin/AddARole")]
+        [Route("api/User/Admin/AddRole")]
         public void AddARole(UserRolePairModel pairing)
         {
             using (var context = new ApplicationDbContext())
@@ -90,7 +90,7 @@ namespace KPPDataManager.Controllers
         
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        [Route("api/User/Admin/RemoveARole")]
+        [Route("api/User/Admin/RemoveRole")]
         public void RemoveARole(UserRolePairModel pairing) 
         {
             using (var context = new ApplicationDbContext())

@@ -176,10 +176,9 @@ namespace KPPDesktopUI.ViewModels
 
             UserRoles.Add(SelectedAvailableRole);
             AvailableRoles.Remove(SelectedAvailableRole);
-           
         }
 
-        public async void RemoveSelectedRole()
+        public async void RemoveSelectedRole(SelectedUser.Id, SelectedRoleToAdd)
         {
             await _userEndpoint.RemoveUserFromRole(SelectedUser.Id, SelectedUserRole);
 
