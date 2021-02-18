@@ -9,8 +9,8 @@ namespace KPPDesktopUI.Library
 {
     public class ConfigHelper 
     {
-        // TODO: Move this from config to the API
-        public decimal GetTaxRate()
+        // TODO Move this from config to the API
+        public static decimal GetTaxRate()
         {
             string rateText = ConfigurationManager.AppSettings["taxRate"];
 
@@ -24,5 +24,4 @@ namespace KPPDesktopUI.Library
             return output;
         }
     }
-    
 }

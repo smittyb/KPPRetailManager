@@ -1,5 +1,4 @@
 ﻿using KPPDataManager.Library.Internal.DataAccess;
-using KPPDataManager.Library;
 using KPPDataManager.Library.Models;
 using KPPDesktopUI.Library;
 using System;
